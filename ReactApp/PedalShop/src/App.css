@@ -1,0 +1,222 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  justify-content: space-between
+  ;
+}
+.TitleItem{
+    margin: 1rem 45%;
+    position: absolute;
+
+}
+
+
+/* Carrito */
+.cart{
+  max-width:50px;
+  max-height: 50px;
+}
+.spinner{
+ animation-name: spinner;
+ animation-duration: .4s;
+ animation-iteration-count: infinite;
+  margin: 40vh 45vw ;
+  max-width: 80px;
+  opacity: 80%;
+
+
+}
+
+.load{
+  display: flex;
+  flex-direction: column;
+}
+/* NavBar */
+
+ul{
+  display: flex;
+align-items: center;
+gap: 2.5rem;
+}
+ul , li{
+  list-style-type: none;
+  position: relative;
+}
+ul , li , .item{
+  text-decoration: none;
+  color: whitesmoke;
+}
+.item::before{
+content: '';
+position: absolute;
+left: 0;
+bottom: 0;
+border-bottom: 1px solid white;
+width:0%;
+transition: .1s;
+}
+.item::after{
+  content:'' ;
+position: absolute;
+right: 0;
+bottom: -5px;
+border-bottom: 1px solid white;
+width:0%;
+}
+.item:hover::before{
+  left: 15%;
+  width: 60%;
+}
+.item:hover::after{
+  right: 20%;
+  width: 90%;
+}
+.item:hover{
+  color: whitesmoke;
+}
+
+/* cards */
+.grid{
+  display: grid;
+  grid-template-columns: repeat(3 , 1fr);
+  grid-template-rows: repeat(4 ) ;
+  position: relative;
+  margin-top: 15%;
+}
+
+.card{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 20px 30%;  
+  align-items: center;
+  padding:.7rem;
+  border: none;
+  gap: .5rem;
+  width: 240px;
+  border: 1px solid black;
+  transition: .1s;
+}
+.card:hover{
+  box-shadow: 0px 0px 13px 4px rgba(0, 0, 255, 0.281);
+}
+
+.cardImg{
+  width: 6vw;
+  border-bottom: 1px solid black;
+  padding-bottom: .5rem;
+  cursor: pointer;
+  transition: .2s;
+}
+.cardImg:hover{
+  transform: scale(1.1);
+  border-bottom: none;
+}
+
+.cardTitle{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: small;
+  font-weight: 200;
+  text-align: center;
+  margin-top: 1rem;
+}
+.counter{
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+.cBtn{
+  padding: .3rem;
+  border: none;
+  
+}
+
+/* form */
+
+
+.form{
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    margin: 15% 40%;
+}
+.formTitle{
+  text-align: center;
+}
+.bottom{
+  border-bottom: 2px solid black;
+  margin-bottom: .5rem;
+}
+.input{
+ padding: .5rem 0;
+  margin-bottom: .5rem;
+  text-align: center;
+}
+.input:focus{
+  color: white;
+  background-color: rgba(23, 23, 212, 0.514);;
+  border: none;
+
+}
+.formBtn{
+  border: none;
+  background-color: rgba(23, 23, 212, 0.514);
+  color: whitesmoke;
+  padding: .5rem 0;
+  transition: .1s;
+}
+.formBtn:hover{
+transform: scale(1.05);
+color: black;
+}
+
+
+/* mediaqueries */
+@media screen and (max-width: 760px) {
+  ul{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+    .grid{
+      display: flex;
+      flex-direction: column;
+    }
+    .cardImg{
+      width: 20vw;
+    }
+    .TitleItem{
+      display: none;
+    }
+}
+@keyframes spinner {
+    50%{
+      rotate: 360deg;
+      transform:rotateX('360deg')
+    }
+    100%{
+      rotate: 360deg;
+      transform:rotateX('360deg')
+    }
+}
