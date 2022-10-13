@@ -1,27 +1,36 @@
 import { useEffect, useState} from "react";
-import Productos from "../components/Productos";
-import ItemDetail from "./ItemDetail";
+import AsyncProducts from "../components/Productos";
+import Item from "../Item/Item";
+import { useParams } from "react-router-dom";
 
 
 const ItemDetailContainer = () =>{
+    
+const {id} = useParams()
+
 const [item , setItem] = useState({})
+useEffect(() => {
 
-useEffect(()=> {
-Productos().then((res)=> {
-setTimeout(() => {
-    setItem(res)
- 
-}, 2000)
-
-
-
+    const traerProductos = () => {
+            return new Promise((res) => {
+            const filtrados = AsyncProducts.find(prod => prod.id === id )
+            
+            setTimeout(() => {
+              setItem(res)
+             
+        },1000)
+    
 }, (error) => console.log(error))
+
+}
+
 
     })
 
+
     return (
     <div className="grid">
-        <ItemDetail item={item}/>
+        <Item item={item}/>
     </div>
 )
   

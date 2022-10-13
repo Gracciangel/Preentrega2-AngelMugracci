@@ -1,12 +1,12 @@
-
+import { Link } from "react-router-dom";
 
 const ItemDetail =({item}) => {
-    console.log(item)
+  
     return(
         <div>
-            <img src={item.img} alt="" />
+           <Link to={'/detalle'}><img src={item.img} alt="" /></Link>
             <h1>{item.titulo}</h1>
-            <h3>{item.precio}</h3>
+            <h3>$ {item.precio}.-</h3>
         </div>
     )
 
