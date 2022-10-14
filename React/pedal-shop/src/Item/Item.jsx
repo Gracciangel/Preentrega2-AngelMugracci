@@ -1,8 +1,8 @@
 import Counter from "../counter/Counter";
 import { Link } from "react-router-dom";
 
-
-const Item =({img , titulo , precio , id, stock }) =>{
+const Item =({img , id , precio , stock , titulo }) =>{
+    
     return (
         <div className="card">
             {/* link para ver detalle */}

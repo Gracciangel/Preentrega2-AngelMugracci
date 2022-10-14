@@ -1,10 +1,10 @@
 import { useState } from "react";
 
-const Counter = ({stock})=>{
+const Counter = ()=>{
     const [valor , setValor] = useState(0)
- 
+  
 const sumar = () =>{
-    setValor(valor +1)
+setValor(valor +1)
 
 }
 const restar = () =>{
@@ -15,8 +15,8 @@ const restar = () =>{
     return (
         <div className="counter">
             <span className="span">{valor}</span>
-            <button className="cBtn" onClick={sumar}>+</button>
-            <button  className="cBtn" onClick={restar}>-</button>
+            <button className="cBtnSumar" onClick={sumar}>+</button>
+            <button  className="cBtnRestar" onClick={restar}>-</button>
         </div>
     )
 }
